@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx0c8onolq22n"]
+
+[ext_resource type="Script" path="res://Tutorial/tutorial_scene.gd" id="1_au6id"]
+[ext_resource type="Texture2D" uid="uid://bwd72pi8ah1y5" path="res://assets/background/sky.png" id="1_httpo"]
+[ext_resource type="LabelSettings" uid="uid://cphg3aqxs1gxk" path="res://assets/LG_96_RED.tres" id="2_qi7g3"]
+[ext_resource type="FontFile" uid="uid://bp6l0d6sccino" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_a1fun"]
+[ext_resource type="LabelSettings" uid="uid://dd7e17yyddu00" path="res://assets/game_over.tres" id="3_rbvor"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a8q60"]
+font = ExtResource("3_a1fun")
+font_size = 21
+font_color = Color(0.134345, 0.558713, 0.513081, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="TutorialScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_au6id")
+
+[node name="MainBG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_httpo")
+expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 48
+
+[node name="TutorialTitle" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "TUTORIAL"
+label_settings = ExtResource("2_qi7g3")
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "ESC -> Main menu"
+label_settings = ExtResource("3_rbvor")
+horizontal_alignment = 1
+
+[node name="VBTutorial" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBTutorial"]
+layout_mode = 2
+text = "SpaceBar is used to fly higher with the plane"
+label_settings = SubResource("LabelSettings_a8q60")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBTutorial"]
+layout_mode = 2
+text = "Pass through the lasers, to get points   !!"
+label_settings = SubResource("LabelSettings_a8q60")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/VBTutorial"]
+layout_mode = 2
+text = "Avoid hitting the pipes   !!"
+label_settings = SubResource("LabelSettings_a8q60")
+horizontal_alignment = 1

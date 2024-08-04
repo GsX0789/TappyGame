@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bik5j1c2dhdo5"]
+
+[ext_resource type="PackedScene" uid="uid://dcrqahwa01xlw" path="res://Laser/laser.tscn" id="1_k6mts"]
+[ext_resource type="Script" path="res://Pipes/pipes.gd" id="1_tu7mm"]
+[ext_resource type="PackedScene" uid="uid://blworkoikkux2" path="res://Pipe/pipe.tscn" id="2_fuu8y"]
+[ext_resource type="AudioStream" uid="uid://bkplw7j3hhyqq" path="res://assets/audio/score.wav" id="4_w4p2h"]
+
+[node name="Pipes" type="Node2D"]
+position = Vector2(433, 187)
+script = ExtResource("1_tu7mm")
+
+[node name="Laser" parent="." instance=ExtResource("1_k6mts")]
+
+[node name="Upper" parent="." instance=ExtResource("2_fuu8y")]
+position = Vector2(0, -80)
+rotation = 3.14159
+
+[node name="Lower" parent="." instance=ExtResource("2_fuu8y")]
+position = Vector2(0, 80)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(75, 0)
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_w4p2h")
+
+[connection signal="body_entered" from="Laser" to="." method="_on_laser_body_entered"]
+[connection signal="body_entered" from="Upper" to="." method="_on_pipes_body_entered"]
+[connection signal="body_entered" from="Lower" to="." method="_on_pipes_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

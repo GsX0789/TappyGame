@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlsttd8ou4huv"]
+
+[ext_resource type="Script" path="res://HUD/hud.gd" id="1_cfjes"]
+[ext_resource type="LabelSettings" uid="uid://dd7e17yyddu00" path="res://assets/game_over.tres" id="1_k7t16"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cfjes")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+
+[node name="ScoreText" type="Label" parent="MC"]
+layout_mode = 2
+text = "000"
+label_settings = ExtResource("1_k7t16")
+vertical_alignment = 1
