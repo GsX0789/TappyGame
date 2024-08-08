@@ -63,19 +63,66 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBTutorial"]
+[node name="En_Label1" type="Label" parent="MarginContainer/VBTutorial"]
 layout_mode = 2
 text = "SpaceBar is used to fly higher with the plane"
 label_settings = SubResource("LabelSettings_a8q60")
 
-[node name="Label2" type="Label" parent="MarginContainer/VBTutorial"]
+[node name="En_Label2" type="Label" parent="MarginContainer/VBTutorial"]
 layout_mode = 2
 text = "Pass through the lasers, to get points   !!"
 label_settings = SubResource("LabelSettings_a8q60")
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="MarginContainer/VBTutorial"]
+[node name="En_Label3" type="Label" parent="MarginContainer/VBTutorial"]
 layout_mode = 2
 text = "Avoid hitting the pipes   !!"
 label_settings = SubResource("LabelSettings_a8q60")
 horizontal_alignment = 1
+
+[node name="Pt_BR_Label1" type="Label" parent="MarginContainer/VBTutorial"]
+visible = false
+layout_mode = 2
+text = "Use a Barra de espaço para voar mais alto"
+label_settings = SubResource("LabelSettings_a8q60")
+
+[node name="Pt_BR_Label2" type="Label" parent="MarginContainer/VBTutorial"]
+visible = false
+layout_mode = 2
+text = "Passe pelos lasers para ganhar pontos !!"
+label_settings = SubResource("LabelSettings_a8q60")
+horizontal_alignment = 1
+
+[node name="Pt_BR_Label3" type="Label" parent="MarginContainer/VBTutorial"]
+visible = false
+layout_mode = 2
+text = "Desvie dos Canos !!"
+label_settings = SubResource("LabelSettings_a8q60")
+horizontal_alignment = 1
+
+[node name="Pt_BR_BUTTON" type="Button" parent="."]
+layout_mode = 2
+offset_left = 7.0
+offset_top = 696.0
+offset_right = 473.0
+offset_bottom = 727.0
+size_flags_vertical = 8
+text = "PT-BR"
+
+[node name="EN_BUTTON" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = 218.0
+offset_right = 233.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EN-US"
+
+[connection signal="pressed" from="Pt_BR_BUTTON" to="." method="_on_pt_br_button_pressed"]
+[connection signal="pressed" from="EN_BUTTON" to="." method="_on_en_button_pressed"]
